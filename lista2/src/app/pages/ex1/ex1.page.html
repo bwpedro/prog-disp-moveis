@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-back-button color='dark'></ion-back-button>
+    <ion-title>Exercicio 1</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+      <ion-icon name="logo-twitter" slot="start"></ion-icon>
+      Seguidores
+      <ion-badge color="danger" slot="end">999+</ion-badge>
+  </ion-item>
+  <ion-radio-group>
+    <ion-list-header>
+      Sistema Operacional
+    </ion-list-header>
+    <ion-item>
+      <ion-label>iOS</ion-label>
+      <ion-radio slot="start" value="ios" checked></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>Android</ion-label>
+      <ion-radio slot="start" value="android"></ion-radio>
+    </ion-item>
+  </ion-radio-group>
+  <ion-item>
+    <ion-label>Anúncios</ion-label>
+    <ion-toggle (ionChange)="anuncio()" color="dark" checked="false"></ion-toggle>
+  </ion-item>
+  <ion-card *ngIf="anuncios">
+    <img src="assets/img/big-head-small.jpg">
+    <ion-card-header>
+      <ion-card-title>ASSISTA SILICON VALLEY!!!!</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-list>
+    <ion-item>
+      <ion-label>Personagem Favorito</ion-label>
+      <ion-select placeholder="Selecione" [(ngModel)]="personagem">
+        <ion-select-option value="erlich">
+          Erlich
+        </ion-select-option>
+        <ion-select-option value="jared">
+          Jared
+        </ion-select-option>
+        <ion-select-option value="richard">
+          Richard
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+</ion-content>

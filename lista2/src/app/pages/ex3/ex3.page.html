@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-back-button color='dark'></ion-back-button>
+    <ion-title>Exercício 3</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list-header color='{{cor}}'>Teste cor</ion-list-header>
+
+  <ion-button (click)="mudar(1)"
+              fill="outline">
+              Vermelho
+  </ion-button>
+
+  <ion-button (click)="mudar(2)"
+              fill="outline">
+              Verde
+  </ion-button>
+
+  <ion-button (click)="mudar(3)"
+              fill="outline">
+              Azul
+  </ion-button>
+</ion-content>

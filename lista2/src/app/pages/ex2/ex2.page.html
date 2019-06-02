@@ -1,0 +1,16 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-back-button color='dark'></ion-back-button>
+      <ion-title>Exercicio 2</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+<ion-content>
+    <h6 *ngIf="char">*Informe 5 caracteres</h6>
+  
+    <ion-item>
+        <ion-label position="floating" color='medium'>Digite a frase</ion-label>
+        <ion-input [(ngModel)]="entrada" (ionChange)="muda()"></ion-input>
+    </ion-item>
+  
+</ion-content>  

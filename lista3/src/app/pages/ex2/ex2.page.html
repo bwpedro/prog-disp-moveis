@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-back-button slot="start" color='dark'></ion-back-button>
+      <ion-title>Criar/Visualizar Modal</ion-title>
+      <ion-buttons slot="end" (click)="criar()">
+          <ion-icon name="add"></ion-icon>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-button *ngFor="let atividade of arrayAtividades;" (click)=mostrar(atividade) expand="block" fill="outline">
+      <ion-label>{{atividade.data}}</ion-label>
+    </ion-button>
+  </ion-list>
+</ion-content>
