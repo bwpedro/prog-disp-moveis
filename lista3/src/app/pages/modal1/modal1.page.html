@@ -26,5 +26,9 @@
   <ion-button *ngIf="criar == 3" (click)="modalCriar()">
     <ion-label>Salvar alterações</ion-label>
   </ion-button>
+  <br>
+  <ion-button *ngIf="criar == 3" (click)="excluirAtividade()" color="danger">
+    <ion-label>Excluir</ion-label>
+  </ion-button>
 
 </ion-content>

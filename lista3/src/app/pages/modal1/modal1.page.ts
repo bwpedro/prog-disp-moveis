@@ -32,7 +32,20 @@ export class Modal1Page implements OnInit {
       tipo: this.tipo,
       desc: this.desc,
       cont: this.cont,
-      stat: this.stat
+      stat: this.stat,
+      deleta : false
+    })
+  }
+
+  excluirAtividade(){
+    this.modal.dismiss({
+      id: this.id,
+      data: this.data,
+      tipo: this.tipo,
+      desc: this.desc,
+      cont: this.cont,
+      stat: this.stat,
+      deleta: true
     })
   }
 

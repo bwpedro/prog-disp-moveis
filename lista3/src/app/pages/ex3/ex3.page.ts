@@ -12,7 +12,6 @@ export class Ex3Page implements OnInit {
   constructor(public modal: ModalController) { }
 
   public arrayAtividades = [
-    new Atividade("01", "03/04", "Prova", "Vai cair tudo", "TUDO", "Não estudado"),
     new Atividade("02", "11/04", "ProvaAAAAA", "Vai cair tudoOOOOO", "TUUUUUUUDO", "Não estudadAAAAAA")
   ]
 
@@ -27,14 +26,18 @@ export class Ex3Page implements OnInit {
 
     const {data} = await pagina.onDidDismiss();
 
-    for (this.i in this.arrayAtividades) {
-      if (this.arrayAtividades[this.i].id == data.id) {
-        this.arrayAtividades[this.i].data = data.data;
-        this.arrayAtividades[this.i].atividade = data.tipo;
-        this.arrayAtividades[this.i].descricao = data.desc;
-        this.arrayAtividades[this.i].conteudo = data.cont;
-        this.arrayAtividades[this.i].status = data.stat;
-        break;
+    if(data.deleta){
+      this.arrayAtividades.splice(this.arrayAtividades.indexOf(data.id))
+    } else {
+      for (this.i in this.arrayAtividades) {
+        if (this.arrayAtividades[this.i].id == data.id) {
+          this.arrayAtividades[this.i].data = data.data;
+          this.arrayAtividades[this.i].atividade = data.tipo;
+          this.arrayAtividades[this.i].descricao = data.desc;
+          this.arrayAtividades[this.i].conteudo = data.cont;
+          this.arrayAtividades[this.i].status = data.stat;
+          break;
+        }
       }
     }
   }
