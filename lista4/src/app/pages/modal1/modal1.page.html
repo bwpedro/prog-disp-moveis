@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button (click)="close()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title *ngIf="criar == 1">Criar Atividade</ion-title>
+    <ion-title *ngIf="criar == 2">Visualizar Atividade</ion-title>
+    <ion-title *ngIf="criar == 3">Editar/Excluir Atividade</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="criar == 2 || criar == 3">ID: <ion-input [(ngModel)]="id"></ion-input><br></div>
+
+  Data: <ion-input [(ngModel)]="data"></ion-input><br>
+  Tipo: <ion-input [(ngModel)]="tipo"></ion-input><br>
+  Descrição: <ion-input [(ngModel)]="desc"></ion-input><br>
+  Conteúdo: <ion-input [(ngModel)]="cont"></ion-input><br>
+  Status: <ion-input [(ngModel)]="stat"></ion-input><br>
+
+  <ion-button *ngIf="criar == 1" (click)="modalCriar()">
+    <ion-label>Salvar</ion-label>
+  </ion-button>
+
+  <ion-button *ngIf="criar == 3" (click)="modalCriar()">
+    <ion-label>Salvar alterações</ion-label>
+  </ion-button>
+
+  <br>
+  <ion-button *ngIf="criar == 3" (click)="excluirAtividade()" color="danger">
+    <ion-label>Excluir</ion-label>
+  </ion-button>
+
+</ion-content>
